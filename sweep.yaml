@@ -1,0 +1,22 @@
+program: main.py
+method: bayes
+metric:
+  name: val_acc
+  goal: maximize
+parameters:
+  activation:
+    values: ['relu', 'silu', 'gelu', 'tanh', 'sigmoid']
+  optimizer:
+    values: ['sgd', 'nesterov', 'adam', 'nadam', 'rmsprop', 'adagrad']
+  batch_size:
+    values: [32, 64, 128, 256, 512]
+  lr:
+    values: [0.0001, 0.0005, 0.001, 0.005, 0.01, 0.05, 0.1]
+  epochs:
+    values: [30, 60, 100]
+  weight_decay:
+    values: [0.00005, 0.0001, 0.0005]
+  momentum:
+    value: 0.9
+  use_wandb:
+    value: True
